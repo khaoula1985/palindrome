@@ -1,0 +1,33 @@
+ALGORITHM palindrome
+VAR 
+set1: ARRAY[] OF characters;
+set2: ARRAY[] OF characters;
+i,j,n: INTEGER;
+
+BEGIN
+   write ('Write your set length');
+   read (n);
+   n:=Length(set1);
+  
+REPEAT
+       FOR i FROM 0 to n-1 STEP 1 DO 
+           WRITE ('write character');
+           READ (set1[i]);
+       END FOR
+UNTIL (set1<>['']);
+
+FOR i FROM 0 to n-1 STEP 1 DO 
+    WRITE ('write character');
+    READ (set2[i]=set1[n-1-i]);
+END FOR;
+
+FOR i FROM 0 to n-1 STEP 1 DO 
+           IF set1[i] <>set2[i] DO
+            WRITE ('not a palindrome');
+           ELSE
+            WRITE (' palindrome');
+            END_IF
+END FOR;       
+END;
+
+
